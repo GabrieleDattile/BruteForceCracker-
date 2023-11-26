@@ -1,8 +1,8 @@
 ######################################################################################################
 # Title: Brute force                                                                                 
-# Author: Tanvir Hossain Antu                                                                        
-# Github : https://github.com/Antu7      
-# If you use the code give me the credit please #
+# Author: Gabriele D'Attile                                                                     
+# Github : https://github.com/GabrieleDattile      
+# buon divertimento <3
 ######################################################################################################
 
 print ("""
