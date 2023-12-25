@@ -33,3 +33,22 @@ Per usare questo progetto, devi modificare il file `bruteforce.py` e inserire l'
 `python bruteforce.py`
 
 Il programma proverà tutte le password presenti nel file `passwords.txt` e ti mostrerà se ne trova una valida.
+
+# Brute Force Cracker in Rust
+
+Questo progetto implementa un semplice cracker di password brute force in Rust.
+
+## Requisiti
+
+- Rust 1.54.0 o versioni successive
+- Libreria `reqwest`
+
+## Installazione
+
+1. Installa Rust sul tuo sistema. Puoi scaricarlo dal sito ufficiale di Rust.
+2. Clona questo repository sul tuo sistema locale.
+3. Naviga nella directory del progetto e installa le dipendenze con `cargo build`.
+
+## Utilizzo
+
+Esegui il programma con `cargo run`. Il programma proverà una serie di password e stamperà l'username e la password se trova una corrispondenza.
